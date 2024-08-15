@@ -5,8 +5,38 @@ export default function Waitlist() {
   const [email, setEmail] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const response = await fetch(`${BASE_API_URL}/api/v1/waitlist`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        email,
+      }),
+    });
+
+    const data = await response.json();
+    console.log(data);
+
+    if (response.ok) {
+      setLoading(false);
+      console.log(data.message);
+      setEmail("");
+      //toast.success(data.message);
+    } else {
+      setLoading(false);
+      console.log(data.message);
+      setEmail("");
+      //toast.error(data.message);
+    }
+  };
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target.value);
+    const { value } = e.target;
+
+    setEmail(value);
   };
 
   return (
