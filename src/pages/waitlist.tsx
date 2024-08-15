@@ -47,21 +47,38 @@ export default function Waitlist() {
   return (
     <main>
       <section className="flex flex-col items-center justify-center min-h-[100dvh]">
-        <h3 className="text-dark text-[60px] font-bold leading-[65.92px] ">
+        <header className="flex flex-row-reverse items-center justify-center gap-3 my-3">
+          {" "}
+          <h1 className="text-[20px] leading-[25.78px]  text-[#ED8850] font-bold font-cab md:text-[40px] md:leading-[30.47px]">
+            Vistapay
+          </h1>
+          <img
+            src="/images/logo.png"
+            alt="vistpay"
+            draggable={false}
+            className="w-10"
+            loading="lazy"
+          />
+        </header>
+        <h3 className="text-dark text-[30px]  md:text-[60px] font-bold leading-[65.92px] ">
           Be the First to <span className="text-primary">know</span>
         </h3>
-        <p className="text-dark-100 text-[25px] leading-[38px] text-center max-w-[840px] font-normal ">
+        <p className="text-dark-100 w-full text-[14px] max-w-[363px] leading-[25.9px] md:text-[25px] md:leading-[38px] text-center md:max-w-[840px] font-normal ">
           Join our waitlist and get exclusive early access to our upcoming
           features and updates.
         </p>
 
         <form onSubmit={handleSubmit}>
-          <fieldset>
-            <Input onChange={handleChange} />
-            <Button disabled={!email} loading={loading}>
+          <div className="relative">
+            <Input className="" onChange={handleChange} />
+            <Button
+              className="absolute bottom-6 right-3"
+              disabled={!email}
+              loading={loading}
+            >
               <Arrow />
             </Button>
-          </fieldset>
+          </div>
         </form>
       </section>
     </main>
