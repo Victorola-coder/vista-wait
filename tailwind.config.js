@@ -6,6 +6,15 @@ export default {
       fontFamily: {
         euc: ["Euclid Circular A", "sans-serif"],
       },
+      colors: {
+        primary: {
+          DEFAULT: "#E25D1A",
+        },
+        dark: {
+          DEFAULT: "#2F2F2F",
+          100: "#00000080",
+        },
+      },
 
       keyframes: {
         "fade-effect": {
