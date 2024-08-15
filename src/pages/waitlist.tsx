@@ -1,11 +1,23 @@
 import { useState } from "react";
 import { Input } from "../components";
+import { BASE_API_URL } from "../constants";
 
 export default function Waitlist() {
   const [email, setEmail] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
 
-  const response = await fetch(`${BASE_API_URL}/api/v1/waitlist`, {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target.value);
+    const { value } = e.target;
+
+    setEmail(value);
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const response = await fetch(`${BASE_API_URL}/api/v1/waitlist`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -31,14 +43,6 @@ export default function Waitlist() {
       //toast.error(data.message);
     }
   };
-
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value);
-    const { value } = e.target;
-
-    setEmail(value);
-  };
-
   return (
     <main>
       <section className="flex flex-col items-center justify-center min-h-[100dvh]">
@@ -52,7 +56,7 @@ export default function Waitlist() {
 
         <form onSubmit={handleSubmit}>
           <fieldset>
-            <Input />
+            <Input onChange={handleChange} />
           </fieldset>
         </form>
       </section>

@@ -2,7 +2,6 @@ import clsx from "clsx";
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   className?: string;
-  onChange?: () => void;
 }
 
 export default function Input({ ...props }: InputProps) {
