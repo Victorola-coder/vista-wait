@@ -14,7 +14,7 @@
   body {
     background-color: white;
     overflow-x: hidden;
-    font-family: "Sailec", sans-serif;
+    font-family: "Euclid Circular A", sans-serif;
     height: 100vh;
     background-image: url("/images/bg.png");
     background-position: center;
@@ -45,32 +45,55 @@ body::-webkit-scrollbar-thumb {
   @apply transition-all duration-500 rounded-full bg-[#E25D1A] hover:bg-[#ED6A22];
 }
 
-@keyframes move {
-  0% {
-    transform: translateX(0);
+/* FONTS */
+@layer base {
+  @font-face {
+    font-family: "Euclid Circular A";
+    font-weight: 300;
+    font-display: swap;
+    src: url("/fonts/Euclid-Circular-A/Euclid-Circular-A-Light.ttf")
+      format("ttf");
   }
-  100% {
-    transform: translateX(-700%);
+  @font-face {
+    font-family: "Euclid Circular A";
+    font-weight: 400;
+    font-display: swap;
+    src: url("/fonts/Euclid-Circular-A/Euclid-Circular-A-Regular.ttf")
+      format("ttf");
   }
-}
-
-.animate-alternate {
-  animation: move infinite alternate;
-  animation-duration: 15s;
-}
-
-.toast-theme-online {
-  background-color: #1864ff;
-  font-family: "Figtree", sans-serif;
-  font-size: 16px;
-  color: white;
-  text-align: center;
-}
-
-.toast-theme-offline {
-  background-color: #ff5454;
-  font-family: "Figtree", sans-serif;
-  font-size: 16px;
-  color: white;
-  text-align: center;
+  @font-face {
+    font-family: "Euclid Circular A";
+    font-weight: 500;
+    font-display: swap;
+    src: url("/fonts/Euclid-Circular-A/Euclid-Circular-A-Medium.ttf")
+      format("ttf");
+  }
+  @font-face {
+    font-family: "Euclid Circular A";
+    font-weight: 600;
+    font-display: swap;
+    src: url("/fonts/Euclid-Circular-A/Euclid-Circular-A-SemiBold.ttf")
+      format("ttf");
+  }
+  @font-face {
+    font-family: "Euclid Circular A";
+    font-weight: 700;
+    font-display: swap;
+    src: url("/fonts/Euclid-Circular-A/Euclid-Circular-A-Bold.ttf")
+      format("ttf");
+  }
+  @font-face {
+    font-family: "Euclid Circular A";
+    font-weight: 800;
+    font-display: swap;
+    src: url("/fonts/Euclid-Circular-A/Euclid-Circular-A-Bold.ttf")
+      format("ttf");
+  }
+  @font-face {
+    font-family: "Euclid Circular A";
+    font-weight: 900;
+    font-display: swap;
+    src: url("/fonts/Euclid-Circular-A/Euclid-Circular-A-Bold.ttf")
+      format("ttf");
+  }
 }

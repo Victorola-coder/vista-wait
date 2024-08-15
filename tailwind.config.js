@@ -3,7 +3,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      fontFamily: {},
+      fontFamily: {
+        euc: ["Euclid Circular A", "sans-serif"],
+      },
 
       keyframes: {
         "fade-effect": {
