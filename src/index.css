@@ -46,12 +46,12 @@ body::-webkit-scrollbar-thumb {
 }
 
 /* FONTS */
-@layer base {
+/* @layer base {
   @font-face {
     font-family: "Euclid Circular A";
     font-weight: 300;
     font-display: swap;
-    src: url("/fonts/Euclid-Circular-A/Euclid-Circular-A-Light.ttf")
+    src: url("../fonts/Euclid-Circular-A/Euclid-Circular-A-Light.ttf")
       format("ttf");
   }
   @font-face {
@@ -96,4 +96,4 @@ body::-webkit-scrollbar-thumb {
     src: url("/fonts/Euclid-Circular-A/Euclid-Circular-A-Bold.ttf")
       format("ttf");
   }
-}
+} */
