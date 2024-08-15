@@ -11,7 +11,7 @@ const Error = () => {
           </h1>
           <img
             src="/images/logo.png"
-            alt="face_icon"
+            alt="vistpay"
             draggable={false}
             className="w-20"
             loading="lazy"
