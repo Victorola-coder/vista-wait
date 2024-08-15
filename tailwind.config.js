@@ -13,6 +13,7 @@ export default {
         dark: {
           DEFAULT: "#2F2F2F",
           100: "#00000080",
+          200: "#A3A3A3",
         },
       },
 
