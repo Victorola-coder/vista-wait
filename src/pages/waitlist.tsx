@@ -46,6 +46,7 @@ export default function Waitlist() {
   };
   return (
     <main>
+      <figure></figure>
       <section className="flex flex-col items-center justify-center min-h-[100dvh]">
         <header className="flex flex-row-reverse items-center justify-center gap-3 my-3">
           {" "}
