@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+@tailwind variants;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* outline: 1px solid red; */
+}
+
+@layer base {
+  body {
+    background-color: white;
+    overflow-x: hidden;
+    font-family: "Sailec", sans-serif;
+    height: 100vh;
+    background-image: url("/images/bg.png");
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+    width: 100%;
+    height: inherit;
+  }
+}
+
+body::-webkit-scrollbar {
+  @apply w-2 bg-transparent;
+}
+
+body::-webkit-scrollbar-corner {
+  @apply bg-transparent;
+}
+
+body::-webkit-scrollbar-track {
+  @apply bg-[#141517];
+}
+
+body::-webkit-scrollbar-track-piece {
+  @apply bg-transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  @apply transition-all duration-500 rounded-full bg-[#E25D1A] hover:bg-[#ED6A22];
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-700%);
+  }
+}
+
+.animate-alternate {
+  animation: move infinite alternate;
+  animation-duration: 15s;
+}
+
+.toast-theme-online {
+  background-color: #1864ff;
+  font-family: "Figtree", sans-serif;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+}
+
+.toast-theme-offline {
+  background-color: #ff5454;
+  font-family: "Figtree", sans-serif;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+}
