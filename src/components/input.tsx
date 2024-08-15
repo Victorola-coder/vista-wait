@@ -15,7 +15,7 @@ export default function Input({ ...props }: InputProps) {
       id="email"
       className={clsx(
         className,
-        "font-normal outline-none focus:w-[610px] transition-all duration-300 text-dark-200 text-base leading-[28px] rounded-[50px] border border-solid border-primary-100 px-[18px] py-[17px]  "
+        "font-medium outline-none w-[300px] text-dark-100 focus:w-[610px] transition-all duration-300 placeholder:text-dark-200 text-base leading-[28px] rounded-[50px] border border-solid border-primary-100 px-[18px] py-[17px]  "
       )}
       placeholder="Enter your email..."
       onChange={onChange}
