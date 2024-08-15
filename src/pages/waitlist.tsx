@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Input } from "../components";
+import { Button, Input } from "../components";
 import { BASE_API_URL } from "../constants";
+import { Arrow } from "../components/svgs";
 
 export default function Waitlist() {
   const [email, setEmail] = useState<string>("");
@@ -57,6 +58,9 @@ export default function Waitlist() {
         <form onSubmit={handleSubmit}>
           <fieldset>
             <Input onChange={handleChange} />
+            <Button disabled={!email} loading={loading}>
+              <Arrow />
+            </Button>
           </fieldset>
         </form>
       </section>
