@@ -9,6 +9,7 @@ export default {
       colors: {
         primary: {
           DEFAULT: "#E25D1A",
+          100: "#E25D1A4D",
         },
         dark: {
           DEFAULT: "#2F2F2F",
