@@ -1,4 +1,5 @@
 import { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 import { Arrow } from "../components/svgs";
 import { BASE_API_URL } from "../constants";
 import { Button, Input } from "../components";
@@ -8,9 +9,8 @@ export default function Waitlist() {
   const [loading, setLoading] = useState<boolean>(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value);
     const { value } = e.target;
-
+    // console.log(e.target.value)
     setEmail(value);
   };
 
@@ -18,7 +18,7 @@ export default function Waitlist() {
     e.preventDefault();
     setLoading(true);
 
-    const response = await fetch(`${BASE_API_URL}/waitlist`, {
+    const response = await fetch(`${BASE_API_URL}/api/v1/waitlist`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -34,16 +34,18 @@ export default function Waitlist() {
 
     if (response.ok) {
       setLoading(false);
-      console.log(data.message);
       setEmail("");
-      //toast.success(data.message);
+      // console.log(data.message);
+      toast.success(data.message);
     } else {
-      setLoading(false);
-      console.log(data.message);
       setEmail("");
-      //toast.error(data.message);
+      setLoading(false);
+      // console.log(data.message);
+      toast.error(data.message);
     }
+    return;
   };
+
   return (
     <main>
       <figure></figure>
@@ -82,6 +84,7 @@ export default function Waitlist() {
           </div>
         </form>
       </section>
+      <Toaster />
     </main>
   );
 }
