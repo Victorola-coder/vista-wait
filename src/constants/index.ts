@@ -9,4 +9,4 @@ export const META_PUBLISHER: string = "Vistapay Inc";
 export const META_KEYWORDS: string = "Vistapay, Money, Beg, Funds";
 
 // api url
-export const BASE_API_URL = "https://api.vistapayhq.com";
+export const BASE_API_URL = "https://app.vistapayhq.com";
