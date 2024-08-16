@@ -48,12 +48,20 @@ export default function Waitlist() {
 
   return (
     <main>
-      <figure></figure>
-      <section className="flex flex-col items-center justify-center min-h-[100dvh]">
+      <section className="relative flex flex-col items-center justify-center min-h-[100dvh]">
+        <figure>
+          <img
+            src="/images/memoki.png"
+            alt="memoji"
+            draggable={false}
+            loading="lazy"
+            className="absolute top-[100px] left-[196px]"
+          />
+        </figure>
         <header className="flex flex-row-reverse items-center justify-center gap-3 my-3">
           {" "}
           <h1 className="text-[20px] leading-[25.78px]  text-[#ED8850] font-bold font-cab md:text-[40px] md:leading-[30.47px]">
-            Vistapay
+            Emmanuel
           </h1>
           <img
             src="/images/logo.png"

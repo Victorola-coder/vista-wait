@@ -1,5 +1,6 @@
 export const META_TITLE: string = "Vistapay || Join Waitlist";
-export const META_DESCRIPTION: string = "Be the First to Know!";
+export const META_DESCRIPTION: string =
+  "Join our waitlist and get exclusive early access to our upcoming features and updates.";
 export const META_IMAGE: string = "";
 
 export const META_URL: string = "https://Vistapay.vercel.app/"; //will change to  the real domain later
