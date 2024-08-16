@@ -9,8 +9,8 @@ export default function Waitlist() {
   const [loading, setLoading] = useState<boolean>(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { value } = e.target;
     // console.log(e.target.value)
+    const { value } = e.target;
     setEmail(value);
   };
 
@@ -73,7 +73,7 @@ export default function Waitlist() {
 
         <form onSubmit={handleSubmit}>
           <div className="relative">
-            <Input className="" onChange={handleChange} />
+            <Input value={email} onChange={handleChange} />
             <Button
               className="absolute bottom-6 right-3"
               disabled={!email}
