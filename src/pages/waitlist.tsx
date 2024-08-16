@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Button, Input } from "../components";
-import { BASE_API_URL } from "../constants";
 import { Arrow } from "../components/svgs";
+import { BASE_API_URL } from "../constants";
+import { Button, Input } from "../components";
 
 export default function Waitlist() {
   const [email, setEmail] = useState<string>("");
@@ -18,7 +18,7 @@ export default function Waitlist() {
     e.preventDefault();
     setLoading(true);
 
-    const response = await fetch(`${BASE_API_URL}/api/v1/waitlist`, {
+    const response = await fetch(`${BASE_API_URL}/waitlist`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
