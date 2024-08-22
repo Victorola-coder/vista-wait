@@ -1,6 +1,6 @@
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
-import { Arrow, Memoji, Memokoi } from "../components/svgs";
+import { Arrow, Inkai, Kinjae, Memoji, Memokoi } from "../components/svgs";
 import { BASE_API_URL } from "../constants";
 import { Button, Input } from "../components";
 
@@ -55,6 +55,14 @@ export default function Waitlist() {
         </figure>
         <figure>
           <Memokoi className="absolute top-[180px] right-[196px]" />
+        </figure>
+        {/*  */}
+        <figure>
+          <Memoji className="absolute bottom-[155px] right-[252px]" />
+        </figure>
+        {/*  */}
+        <figure>
+          <Memoji className="absolute bottom-[180px] right-[196px]" />
         </figure>
         <header className="flex flex-row-reverse items-center justify-center gap-3 my-3">
           {" "}
