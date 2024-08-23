@@ -25,8 +25,8 @@ export function Arrow({ className }: SVGProps) {
 export function Memoji({ className }: SVGProps) {
   return (
     <svg
-      width="70"
-      height="70"
+      // width="70"
+      // height="70"
       className={clsx(className)}
       viewBox="0 0 70 70"
       fill="none"

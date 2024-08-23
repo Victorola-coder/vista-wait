@@ -11,3 +11,5 @@ export const META_KEYWORDS: string = "Vistapay, Money, Beg, Funds";
 
 // api url
 export const BASE_API_URL = "https://app.vistapayhq.com";
+
+export const tokenKey = "";

@@ -1,8 +1,8 @@
 import { useState } from "react";
+import { BASE_API_URL, tokenKey } from "../constants";
+import { Button, Input } from "../components";
 import toast, { Toaster } from "react-hot-toast";
 import { Arrow, Inkai, Kinjae, Memoji, Memokoi } from "../components/svgs";
-import { BASE_API_URL } from "../constants";
-import { Button, Input } from "../components";
 
 export default function Waitlist() {
   const [email, setEmail] = useState<string>("");
@@ -20,9 +20,13 @@ export default function Waitlist() {
 
     const response = await fetch(`${BASE_API_URL}/api/v1/waitlist`, {
       method: "POST",
+      mode: "cors",
+      credentials: "include",
       headers: {
-        "Content-Type": "application/json",
         Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + tokenKey,
+        Host: "https://app.vistapayhq.com",
       },
       body: JSON.stringify({
         email,
@@ -51,18 +55,18 @@ export default function Waitlist() {
       <section className="relative flex flex-col items-center justify-center min-h-[100dvh]">
         {/* memoji around the main stuuffs */}
         <figure>
-          <Memoji className="absolute top-[100px] left-[196px]" />
+          <Memoji className="absolute w-[35px] h-[35px] top-[137px] left-[49px] md:h-[70px] md:w-[70px] md:top-[100px] md:left-[196px]" />
         </figure>
         <figure>
-          <Memokoi className="absolute top-[180px] right-[196px]" />
-        </figure>
-        {/*  */}
-        <figure>
-          <Memoji className="absolute bottom-[155px] right-[252px]" />
+          <Memokoi className="absolute w-[35px] h-[35px] top-[180px] right-[70px] md:h-[70px] md:w-[70px] md:top-[180px] md:right-[196px]" />
         </figure>
         {/*  */}
         <figure>
-          <Memoji className="absolute bottom-[180px] right-[196px]" />
+          <Kinjae className="absolute w-[35px] h-[35px] top-[496px] left-[34px] md:h-[70px] md:w-[70px] md:top-[619px] md:left-[252px]" />
+        </figure>
+        {/*  */}
+        <figure>
+          <Inkai className="absolute w-[35px] h-[35px] top-[561px] right-[27px] md:h-[70px] md:w-[70px] md:top-[628px] md:right-[252px]" />
         </figure>
         <header className="flex flex-row-reverse items-center justify-center gap-3 my-3">
           {" "}
