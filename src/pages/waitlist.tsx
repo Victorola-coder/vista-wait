@@ -61,7 +61,7 @@ export default function Waitlist() {
         <header className="flex flex-row-reverse items-center justify-center gap-3 my-3">
           {" "}
           <h1 className="text-[20px] leading-[25.78px]  text-[#ED8850] font-bold font-cab md:text-[40px] md:leading-[30.47px]">
-            Emmanuel
+            Vistapay
           </h1>
           <img
             src="/images/logo.png"
