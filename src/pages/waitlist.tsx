@@ -91,7 +91,7 @@ export default function Waitlist() {
 
         <form onSubmit={handleSubmit}>
           <div className="relative">
-            <Input value={email} onChange={handleChange} />
+            <Input type="email" value={email} onChange={handleChange} />
             <Button
               className="absolute bottom-6 right-3"
               disabled={!email}

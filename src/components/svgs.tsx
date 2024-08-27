@@ -89,7 +89,7 @@ export const Memokoi = ({ className }: SVGProps) => {
         height="68.2241"
         rx="34.112"
         stroke="#FFF2EB"
-        stroke-width="1.77592"
+        strokeWidth="1.77592"
       />
       <defs>
         <pattern

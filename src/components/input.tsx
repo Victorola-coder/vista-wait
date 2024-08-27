@@ -9,7 +9,7 @@ export default function Input({ ...props }: InputProps) {
   return (
     <input
       {...prop}
-      type="email"
+      type={type}
       name="email"
       id="email"
       className={clsx(
