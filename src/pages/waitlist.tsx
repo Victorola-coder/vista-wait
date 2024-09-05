@@ -11,43 +11,47 @@ export default function Waitlist() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     // console.log(e.target.value)
     const { value } = e.target;
-    setEmail(value);
+    setEmail(value.trim());
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
 
-    const response = await fetch(`${BASE_API_URL}/api/v1/waitlist`, {
-      method: "POST",
-      mode: "cors",
-      credentials: "include",
-      headers: {
+    try {
+      const apiUrl = `${BASE_API_URL}/api/v1/waitlist`;
+      const headers = {
         Accept: "application/json",
         "Content-Type": "application/json",
-        Authorization: "Bearer " + tokenKey,
-        Host: "https://app.vistapayhq.com",
-      },
-      body: JSON.stringify({
-        email,
-      }),
-    });
+        Authorization: `Bearer ${tokenKey}`,
+      };
 
-    const data = await response.json();
-    console.log(data);
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        mode: "cors",
+        credentials: "include",
+        headers,
+        body: JSON.stringify({ email }),
+      });
 
-    if (response.ok) {
-      setLoading(false);
-      setEmail("");
-      // console.log(data.message);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
       toast.success(data.message);
-    } else {
-      setEmail("");
       setLoading(false);
-      // console.log(data.message);
-      toast.error(data.message);
+      setEmail("");
+    } catch (error) {
+      if (error instanceof Error) {
+        console.error(error.message);
+        toast.error(error.message);
+      } else {
+        console.error("Unknown error");
+        toast.error("Failed to add email to waitlist");
+      }
+      setLoading(false);
     }
-    return;
   };
 
   return (
