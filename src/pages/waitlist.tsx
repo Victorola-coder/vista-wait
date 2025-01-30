@@ -40,16 +40,20 @@ export default function Waitlist() {
 
       const data = await response.json();
       toast.success(data.message);
-      setLoading(false);
+
       setEmail("");
     } catch (error) {
       if (error instanceof Error) {
         console.error(error.message);
         toast.error(error.message);
+        setEmail("");
       } else {
         console.error("Unknown error");
         toast.error("Failed to add email to waitlist");
+        setEmail("");
       }
+    } finally {
+      setEmail("");
       setLoading(false);
     }
   };
